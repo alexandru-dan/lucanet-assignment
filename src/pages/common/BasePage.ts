@@ -1,8 +1,5 @@
-// src/pages/BasePage.ts
 import { Page } from '@playwright/test';
-import {Selector} from "@typescript-eslint/eslint-plugin/dist/rules/naming-convention-utils";
 import {Locator} from "playwright";
-const sleep = (s: number) => new Promise((r) => setTimeout(r, s * 1000));
 
 export class BasePage {
     page: Page;
