@@ -5,19 +5,19 @@ test('Verify that the user is redirected to the search page - 1st variant', asyn
 
         await lucanet.home()
             //Check top navigation elements are displayed
-        .then(HomePage => HomePage.topNavigationPage.verifyElementsAreDisplayed())
+        .then(homePage => homePage.topNavigationPage.verifyElementsAreDisplayed())
             //Close the ad
-        .then(HomePage => HomePage.topNavigationPage.closeAd())
+        .then(homePage => homePage.topNavigationPage.closeAd())
             //Click on search input from navigation
-        .then(HomePage => HomePage.topNavigationPage.openSearchModal())
+        .then(homePage => homePage.topNavigationPage.openSearchModal())
             //Verify that the search modal is displayed
-        .then(SearchModal => SearchModal.verifyElementsAreDisplayed())
+        .then(searchModal => searchModal.verifyElementsAreDisplayed())
             //Close search modal
-        .then(SearchModal => SearchModal.closeSearchModal())
+        .then(searchModal => searchModal.closeSearchModal())
             //Verify that we returned to the home page and check top navigation elements are displayed
-        .then(HomePage => HomePage.topNavigationPage.verifyElementsAreDisplayed())
+        .then(homePage => homePage.topNavigationPage.verifyElementsAreDisplayed())
             //Check footer elements are displayed
-        .then(HomePage => HomePage.footerPage.verifyElementsAreDisplayed());
+        .then(homePage => homePage.footerPage.verifyElementsAreDisplayed());
 });
 test('Verify that the user is redirected to the search page - 2nd variant', async ({ lucanet }) => {
         const homePage = await lucanet.home();
