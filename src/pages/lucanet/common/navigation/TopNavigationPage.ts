@@ -62,8 +62,8 @@ export class TopNavigationPage<DERIVED> extends BasePage {
     //example of method chaining
     async goToPartnerLogin(): Promise<PartnerLoginPage> {
         const [newPage] = await Promise.all([
-            await this.page.waitForEvent('popup'), // Wait for new tab
-            await this.partnerLoginButton.click(), // Click Login button
+            this.page.waitForEvent('popup'), // Wait for new tab
+            this.partnerLoginButton.click(), // Click Login button
         ]);
         await newPage.waitForLoadState('domcontentloaded');
         return new PartnerLoginPage(newPage, this.logger);

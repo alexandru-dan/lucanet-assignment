@@ -1,7 +1,7 @@
 import {test} from '../configs/fixture/BaseFixtures';
 import {expect} from "@playwright/test";
 
-test('Verify that the user is redirected to the search page - 1st variant', async ({ lucanet }) => {
+test('[Search]Verify that the user is redirected to the search page - 1st variant', async ({ lucanet }) => {
 
         await lucanet.home()
             //Check top navigation elements are displayed
@@ -19,7 +19,7 @@ test('Verify that the user is redirected to the search page - 1st variant', asyn
             //Check footer elements are displayed
         .then(homePage => homePage.footerPage.verifyElementsAreDisplayed());
 });
-test('Verify that the user is redirected to the search page - 2nd variant', async ({ lucanet }) => {
+test('[Search]Verify that the user is redirected to the search page - 2nd variant', async ({ lucanet }) => {
         const homePage = await lucanet.home();
         await homePage.topNavigationPage.verifyElementsAreDisplayed();
         await homePage.topNavigationPage.closeAd();
@@ -29,7 +29,7 @@ test('Verify that the user is redirected to the search page - 2nd variant', asyn
         await homePage.topNavigationPage.verifyElementsAreDisplayed();
         await homePage.footerPage.verifyElementsAreDisplayed();
 });
-test('Verify that the user is redirected to the search page - 3rd variant', async ({ lucanet }) => {
+test('[Search]Verify that the user is redirected to the search page - 3rd variant', async ({ lucanet }) => {
 
         const homePage = await lucanet.home();
         //Check top navigation elements are displayed

@@ -4,7 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "test:all": "npx playwright test --config=playwright.config.ts",
+    "test:search": "npx playwright test --config=playwright.config.ts --grep=search",
+    "test:login": "npx playwright test --config=playwright.config.ts --grep=partnerlogin"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",

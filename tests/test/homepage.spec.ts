@@ -1,6 +1,6 @@
 import {test} from "../configs/fixture/BaseFixtures";
 
-test('Verify that user is redirected to solutions page after clicking the button', async ({ lucanet }) => {
+test('[Home]Verify that user is redirected to solutions page after clicking the button', async ({ lucanet }) => {
      await lucanet.home()
         .then(HomePage => HomePage.topNavigationPage.closeAd())
         .then(HomePage => HomePage.topNavigationPage.verifyElementsAreDisplayed())

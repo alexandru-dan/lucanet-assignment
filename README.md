@@ -42,9 +42,25 @@ Before you begin, ensure you have the following installed on your machine:
    ```
 ## Running Tests
 
-To run the tests, use the following command:
+To run the tests, we can use multiple commands depending of what we want:
 ```sh
-npx playwright test
+npx playwright test // to run all the tests
+npx playwright test --config=playwright.config.ts --grep=search // run only the tests that have the word search in the description
+```
+Also, as we have these scripts: 
+```json
+{
+   "scripts": {
+      "test:all": "npx playwright test --config=playwright.config.ts",
+      "test:search": "npx playwright test --config=playwright.config.ts --grep=search",
+      "test:login": "npx playwright test --config=playwright.config.ts --grep=partnerlogin"
+   }
+}
+```
+We can run the tests with the following commands:
+```sh
+npm run test:search // run only the tests that have the word search in the description
+npm run test:login // run only the tests that have the word partnerlogin in the description
 ```
 
 ## Generating Allure Reports
